@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="(https://fonts.google.com/specimen/League+Spartan)">
+  <link rel="stylesheet" href="app.css">
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="top-container">
+        <div class="header">
+          <div class="calc">calc</div>
+          <div class="theme">
+              THEME
+              <div class="option">
+               <label for="range" class="label"><span>1</span>2<span>3<span></label>
+               <input class="range" type="range" name="theme" id="range" min="1" max="3" value="0">
+              </div>
+            </div>
+        </div>
+        <div class="display">
+            <input class="input" type="text" placeholder="0">
+        </div>
+      </div>
+      <div class="keypad">
+        <div class="num-ul">
+          <div class="val">
+            <button data-value="7" class="but">7</button>
+            <button data-value="8"  class="but">8</button>
+            <button data-value="9" class="but">9</button>
+            <button data-value="Del" class="bot del">Del</button>
+          </div>
+          <div class="val">
+            <button data-value="4" class="but">4</button>
+            <button data-value="5"  class="but">5</button>
+            <button data-value="6" class="but">6</button>
+            <button data-value="+" class="bot">+</button>
+          </div>
+          <div class="val">
+            <button data-value="1" class="but">1</button>
+            <button data-value="2"  class="but">2</button>
+            <button data-value="3" class="but">3</button>
+            <button data-value="-" class="bot">-</button>
+          </div>
+          <div class="val">
+            <button data-value="." class="but">.</button>
+            <button data-value="0"  class="but">0</button>
+            <button data-value="/" class="bot">/</button>
+            <button data-value="*" class="bot">*</button>
+          </div>
+          <div class="val res">
+            <button class="reset bot" data-value="reset" type="reset">Reset</button>
+            <button class="submit bot" data-value="="type="submit">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
