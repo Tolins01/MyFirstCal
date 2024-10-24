@@ -1,45 +1,29 @@
 const buttons = document.querySelectorAll("button")
 const screen = document.querySelector(".input")
 // const operate = document.querySelectorAll(".bot")
-const specialChars = ["%","*","/","+","="];
-let outPut = "";
-let answer ="";
+let outPut ="";
+
 
 const calculate = (evaluat)=>{
-    if(evaluat==="=" && outPut !== "" ){
+    if(evaluat==="="){
         // console.log(eval(outPut))
          outPut = eval(outPut)
-         answer = outPut
+         screen.value = outPut;
     }else if (evaluat ==="reset"){
         outPut ="";
+        screen.value = outPut;
     }else if(evaluat==="Del"){
-        outPut = outPut.toString().slice(0,-1)
-        console.log(outPut)
+        outPut = outPut.substring(0,outPut.length-1);
+        screen.value = outPut;
     }else{
-        if(outPut === "" && specialChars.includes(evaluat))return;
-        if(outPut.includes()){
-            console.log (outPut.split('').pop())
             outPut += evaluat;  
-        }else{
-            outPut += evaluat;  
-        }
-     
+            screen.value = outPut
     }
-    screen.value = outPut;
 };
 
 buttons.forEach((button)=>{
     button.addEventListener("click",(e)=>{
-        if(answer===""){
               calculate(e.target.dataset.value)
-            }else if(answer !=="" && specialChars.includes(e.target.dataset.value)){
-                outPut+=calculate(e.target.dataset.value)
-            }
-            else if (answer !=="" && specialChars.includes(e.target.dataset.value) === false){
-                calculate(e.target.dataset.value)
-                answer = ""
-                
-            }
         // console.log(e.target.dataset.value)
     
     })
