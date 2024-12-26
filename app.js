@@ -1,34 +1,39 @@
 const buttons = document.querySelectorAll("button")
-const screen = document.querySelector(".input")
+const currentOperand = document.querySelector(".currentOperand")
+const previousOperand   = document.querySelector(".previousOperand")
+
 // const operate = document.querySelectorAll(".bot")
 let outPut ="";
-
+const specCharacters= ["-","+","/","*","."]
 
 const calculate = (evaluat)=>{
     if(evaluat==="="){
         // console.log(eval(outPut))
          outPut = eval(outPut)
-         screen.value = outPut;
+         currentOperand.innerHTML = outPut;
     }else if (evaluat ==="reset"){
         outPut ="";
-        screen.value = outPut;
+        currentOperand.innerHTML = outPut;
     }else if(evaluat==="Del"){
         outPut = outPut.substring(0,outPut.length-1);
-        screen.value = outPut;
+        currentOperand.innerHTML = outPut;
     }else{
             outPut += evaluat;  
-            screen.value = outPut
+            currentOperand.innerText = outPut
     }
 };
 
 buttons.forEach((button)=>{
     button.addEventListener("click",(e)=>{
-              calculate(e.target.dataset.value)
-        // console.log(e.target.dataset.value)
+        
+        if(specCharacters.includes(e.target.dataset.value) && specCharacters.includes(outPut.substring(outPut.length-1))){   
+        outPut.replace(outPut.substring(outPut.length-1), e.target.dataset.value)  
+        }
+        calculate(e.target.dataset.value)
+    
     
     })
 })
-
 
 
 

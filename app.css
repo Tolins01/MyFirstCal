@@ -43,11 +43,11 @@ body{
     font-size: 10px;
 }
 
-.display{
+/* .display{
     display: flex;
     flex: 1;
     justify-content: center;
-}
+} */
 
 .option{
     display: flex;
@@ -102,8 +102,11 @@ body{
     margin: auto;
 }
 
-.input{
+.display{
     display: flex;
+    flex-direction: column;
+    flex-grow:calc(2*1);
+    justify-content: flex-end;
     text-align:end;
     height: 3.5em;
     padding-right: 20px;
@@ -112,6 +115,10 @@ body{
     background-color: hsl(268, 71%, 12%)
 }
 
+.currentOperand{
+    justify-content: center;
+    margin-bottom:12px;
+}
 
 .keypad{
     display:flex;
