@@ -27,43 +27,44 @@
           </div>
         </div>
         <div class="display">
-            <div class="currentOperand">
+            <div data-previousOperand class="previousOperand">
+             0
+            </div>
+            <div  data-currentOperand class="currentOperand">
               0
             </div>
-            <div class="previousOperand">
-              0
-            </div>
+           
          </div>
       </div>
       <div class="keypad">
         <div class="num-ul">
           <div class="val">
-            <button data-value="7" class="but">7</button>
-            <button data-value="8"  class="but">8</button>
-            <button data-value="9" class="but">9</button>
-            <button data-value="Del" class="bot del">Del</button>
+            <button data-number class="but">7</button>
+            <button data-number class="but">8</button>
+            <button data-number class="but">9</button>
+            <button data-delete class="bot del">Del</button>
           </div>
           <div class="val">
-            <button data-value="4" class="but">4</button>
-            <button data-value="5"  class="but">5</button>
-            <button data-value="6" class="but">6</button>
-            <button data-value="+" class="bot">+</button>
+            <button data-number class="but">4</button>
+            <button data-number  class="but">5</button>
+            <button data-number class="but">6</button>
+            <button data-operation class="bot">+</button>
           </div>
           <div class="val">
-            <button data-value="1" class="but">1</button>
-            <button data-value="2"  class="but">2</button>
-            <button data-value="3" class="but">3</button>
-            <button data-value="-" class="bot">-</button>
+            <button data-number class="but">1</button>
+            <button data-number class="but">2</button>
+            <button data-number class="but">3</button>
+            <button data-operation class="bot">-</button>
           </div>
           <div class="val">
-            <button data-value="." class="but">.</button>
-            <button data-value="0"  class="but">0</button>
-            <button data-value="/" class="bot">/</button>
-            <button data-value="*" class="bot">*</button>
+            <button data-number class="but">.</button>
+            <button data-number  class="but">0</button>
+            <button data-operation class="bot">÷</button>
+            <button data-operation class="bot">*</button>
           </div>
           <div class="val res">
-            <button class="reset bot" data-value="reset" type="reset">Reset</button>
-            <button class="submit bot" data-value="="type="submit">=</button>
+            <button class="reset bot" data-all-clear type="reset">Reset</button>
+            <button class="submit bot" data-equals type="submit">=</button>
           </div>
         </div>
       </div>
@@ -74,6 +75,74 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  <script src="app.js"></script>
+  <script src="calapp.js"></script>
+  <!-- <script src="app.js"></script> -->
 </body>
 </html>
+
+
+
+<!-- <body>
+  <div class="container">
+    <div class="top-container">
+      <div class="header">
+        <div class="calc">calc</div>
+        <div class="theme">
+            THEME
+            <div class="option">
+             <label for="range" class="label"><span>1</span>2<span>3<span></label>
+             <input class="range" type="range" name="theme" id="range" min="1" max="3" value="0">
+            </div>
+        </div>
+      </div>
+      <div class="display">
+          <div class="currentOperand">
+            0
+          </div>
+          <div class="previousOperand">
+            0
+          </div>
+       </div>
+    </div>
+    <div class="keypad">
+      <div class="num-ul">
+        <div class="val">
+          <button data-value="7" class="but">7</button>
+          <button data-value="8"  class="but">8</button>
+          <button data-value="9" class="but">9</button>
+          <button data-value="Del" class="bot del">Del</button>
+        </div>
+        <div class="val">
+          <button data-value="4" class="but">4</button>
+          <button data-value="5"  class="but">5</button>
+          <button data-value="6" class="but">6</button>
+          <button data-value="+" class="bot">+</button>
+        </div>
+        <div class="val">
+          <button data-value="1" class="but">1</button>
+          <button data-value="2"  class="but">2</button>
+          <button data-value="3" class="but">3</button>
+          <button data-value="-" class="bot">-</button>
+        </div>
+        <div class="val">
+          <button data-value="." class="but">.</button>
+          <button data-value="0"  class="but">0</button>
+          <button data-value="/" class="bot">/</button>
+          <button data-value="*" class="bot">*</button>
+        </div>
+        <div class="val res">
+          <button class="reset bot" data-value="reset" type="reset">Reset</button>
+          <button class="submit bot" data-value="="type="submit">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Your Name Here</a>.
+</div>
+<script src="calapp.js"></script>
+<script src="app.js"></script>
+</body> -->
