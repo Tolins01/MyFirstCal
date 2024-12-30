@@ -111,18 +111,24 @@ body{
     align-items: flex-end;
     height: 2.5em;
     padding:0 20px 10px 0;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-break: break-all;
     border-radius: 5px;
     color:#fff;
     background-color: hsl(268, 71%, 12%)
+}
+
+.previousOperand{
+    display: none;
+    justify-content: center;
 }
 
 .currentOperand{
     justify-content: center;
 }
 
-.previoustOperand{
-    justify-content: center;
-}
+
 
 .keypad{
     display:flex;

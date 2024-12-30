@@ -1,3 +1,4 @@
+const previousOperand= document.querySelector(".previousOperand")
 const currentOperandText = document.querySelector("[data-currentOperand]")
 const previousOperandText = document.querySelector("[data-previousOperand]")
 const deleteButton = document.querySelector("[data-delete]")
@@ -23,6 +24,11 @@ class Calculator {
 
     delete(){
         this.currentOperand = this.currentOperand.toString().slice(0,-1)
+        this.previousOperand = this.previousOperand.toString().slice(0,-1)
+        if(this.currentOperand=="" && this.previousOperand==""){
+           this.clear()
+          
+        }
     }
 
     appendNumber(number){
@@ -76,7 +82,7 @@ class Calculator {
     updateDisplay(){
         this.currentOperandText.innerText = this.getDisplayNumber(this.currentOperand)
         if(this.operation != null){
-            console.log(this.operation)
+            previousOperand.style.display = "flex";
             this.previousOperandText.innerText = 
             `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`}
             else {

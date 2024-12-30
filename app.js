@@ -1,39 +1,39 @@
 const buttons = document.querySelectorAll("button")
-const currentOperand = document.querySelector(".currentOperand")
-const previousOperand   = document.querySelector(".previousOperand")
-
-// const operate = document.querySelectorAll(".bot")
-let outPut ="";
-const specCharacters= ["-","+","/","*","."]
-
+const screen = document.querySelector(".input")
+const specialChars = ["%","*","/","+","="];
+let outPut = "";
+let answer ="";
 const calculate = (evaluat)=>{
-    if(evaluat==="="){
+    if (outPut.toString().includes(".")&& evaluat===".")return
+    if(evaluat==="=" && outPut !== "" ){
         // console.log(eval(outPut))
          outPut = eval(outPut)
-         currentOperand.innerHTML = outPut;
     }else if (evaluat ==="reset"){
         outPut ="";
-        currentOperand.innerHTML = outPut;
     }else if(evaluat==="Del"){
-        outPut = outPut.substring(0,outPut.length-1);
-        currentOperand.innerHTML = outPut;
+        outPut = outPut.toString().slice(0,-1)
+        console.log(outPut)
     }else{
+        if(outPut === "" && specialChars.includes(evaluat))return;
+        if(outPut.includes()){
+            console.log (outPut.split('').pop())
             outPut += evaluat;  
-            currentOperand.innerText = outPut
+        }else{
+            outPut += evaluat;  
+        }
+     
     }
+    screen.value = outPut;
 };
 
 buttons.forEach((button)=>{
     button.addEventListener("click",(e)=>{
-        
-        if(specCharacters.includes(e.target.dataset.value) && specCharacters.includes(outPut.substring(outPut.length-1))){   
-        outPut.replace(outPut.substring(outPut.length-1), e.target.dataset.value)  
-        }
-        calculate(e.target.dataset.value)
-    
+              calculate(e.target.dataset.value)
+        // console.log(e.target.dataset.value)
     
     })
 })
+
 
 
 
