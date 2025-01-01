@@ -5,7 +5,7 @@ const equalsButton = document.querySelector("[data-equals]")
 const allClearButton = document.querySelector("[data-all-clear]")
 const operationButton = document.querySelectorAll("[data-operation]")
 const numberButtons = document.querySelectorAll("[data-number]")
-
+let answer=0;
 console.log('welcome')
 
 class Calculator {
@@ -37,10 +37,10 @@ class Calculator {
    
    chooseOperation(operation) {
     if (this.currentOperand === '') return
-    if (this.previousOperand !== '') {
+    if (this.previousOperand !== '' || answer!=0) {
       this.compute()
     }
-    this.operation = operation
+    this.operation = operation 
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
@@ -56,7 +56,7 @@ class Calculator {
         const prev = parseFloat(this.previousOperand)
         const current =  parseFloat (this.currentOperand)
         if (isNaN(prev) || isNaN(current))return
-        switch (this.operation){
+        switch (this.operation || answer!=0){
             case '+':
                 computation = prev + current
                 break
@@ -73,6 +73,7 @@ class Calculator {
             return
         }
         this.currentOperand = computation
+        answer = this.currentOperand
         this.operation =   undefined 
         this.previousOperand =  ''  
     }
@@ -119,7 +120,6 @@ operationButton.forEach(button =>{
 equalsButton.addEventListener('click',() =>{
     calculator.compute()
     calculator.updateDisplay()
-    calculator.clear()
 })
 
 
