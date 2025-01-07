@@ -5,7 +5,7 @@ const equalsButton = document.querySelector("[data-equals]")
 const allClearButton = document.querySelector("[data-all-clear]")
 const operationButton = document.querySelectorAll("[data-operation]")
 const numberButtons = document.querySelectorAll("[data-number]")
-let answer=0;
+let answer;
 console.log('welcome')
 
 class Calculator {
@@ -21,14 +21,17 @@ class Calculator {
       this.operation = undefined
     }
 
-    delete(){
-        this.currentOperand = this.currentOperand.toString().slice(0,-1)
-        this.previousOperand = this.previousOperand.toString().slice(0,-1)
-        if(this.currentOperand=="" && this.previousOperand==""){
-           this.clear()
-          
+    delete() {
+        if (answer !== 0) {
+            this.currentOperand = answer.toString(); // Display the answer
+            answer = 0; // Reset the answer after displaying it
+            return;
         }
+        this.currentOperand = this.currentOperand.toString().slice(0, -1); // Perform delete
     }
+    
+
+    
 
     appendNumber(number){
       if(number === "." && this.currentOperand.includes('.'))return
@@ -42,10 +45,11 @@ class Calculator {
     }
     this.operation = operation 
     this.previousOperand = this.currentOperand
+    this.currentOperand = ''
     if(answer!=0 && this.previousOperand == 0){
         this.previousOperand = answer
     }
-    this.currentOperand = ''
+
   }
 
     getDisplayNumber(number){
@@ -59,7 +63,7 @@ class Calculator {
         const prev = parseFloat(this.previousOperand)
         const current =  parseFloat (this.currentOperand)
         if (isNaN(prev) || isNaN(current))return
-        switch (this.operation || answer!=0){
+        switch (this.operation){
             case '+':
                 computation = prev + current
                 break
@@ -126,7 +130,7 @@ equalsButton.addEventListener('click',() =>{
 
 
 allClearButton.addEventListener('click',() =>{
-    calculator.clear()
+    calculator.clear() 
     calculator.updateDisplay()
 })
 

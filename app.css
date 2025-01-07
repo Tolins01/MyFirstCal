@@ -121,6 +121,7 @@ body{
 
 .previousOperand{
     display: none;
+    color:#cdc6c6;
     justify-content: center;
 }
 
