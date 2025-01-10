@@ -124,9 +124,14 @@ operationButton.forEach(button =>{
 
 equalsButton.addEventListener('click',() =>{
     if(calculator.previousOperand === 0)return
+    if(calculator.currentOperandText.innerText){  
+    answer = 0;
+    }
     calculator.compute()
     calculator.updateDisplay()
     calculator.clear()
+    console.log(calculator.currentOperandText.innerText,calculator)
+    // console.log(calculator.previousOperandText.innerText)
 })
 
 
