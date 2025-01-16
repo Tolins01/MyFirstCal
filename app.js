@@ -1,3 +1,4 @@
+const body = document.querySelector("body")
 const buttons = document.querySelectorAll("button")
 const screen = document.querySelector(".input")
 const specialChars = ["%","*","/","+","="];
@@ -34,17 +35,61 @@ buttons.forEach((button)=>{
     })
 })
 
+ function displayColor(color,delay) {
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            body.style.backgroundColor = color;
+            resolve();
+        }, delay);
+        
+    })
+    
+}
+
+async function printBackgroung() {
+    await displayColor("blue",3000)
+    await displayColor("yellow",3000)
+    await displayColor("orange",3000)
+}
+
+
+displayColor("pink",4000)
+
+
+
+printBackgroung()
+const data = `{"numbers":23,"address":"15 FIRST LIGHT STREET IJEODOD"}`
+console.log(JSON.parse(data).address)
+
+const jokes = document.querySelector('.jokes')
+
+
+
+const but = document.querySelector('.button')
+
+
+const addNewJokes = async ()=> {
+    const jokeText = await getDadJoke()
+    const newLI= document.createElement('LI')
+    newLI.append(jokeText);
+    jokes.append(newLI);
+}
+
+const getDadJoke = async () => {
+    try{const config = {headers: {Accept: 'application/json'}}
+    const res = await axios.get('https://icanhazdadjoke.com/',config)
+    console.log(res)
+    return res.data.joke
+} 
+    catch(e){
+        return"Oh no error:("
+    }   
+}
 
 
 
 
-
-
-
-
-
-
-
+but.addEventListener('click', addNewJokes)
 
 
 

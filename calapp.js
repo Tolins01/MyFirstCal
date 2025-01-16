@@ -5,6 +5,7 @@ const equalsButton = document.querySelector("[data-equals]")
 const allClearButton = document.querySelector("[data-all-clear]")
 const operationButton = document.querySelectorAll("[data-operation]")
 const numberButtons = document.querySelectorAll("[data-number]")
+
 let answer;
 console.log('welcome')
 
@@ -23,7 +24,7 @@ class Calculator {
 
     delete() {
         if (answer !== 0) {
-            this.currentOperand = answer.toString(); // Display the answer
+             // Display the answer
             answer = 0; // Reset the answer after displaying it
             return;
         }
@@ -144,3 +145,5 @@ deleteButton.addEventListener('click',() =>{
     calculator.delete()
     calculator.updateDisplay()
 })
+
+
