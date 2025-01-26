@@ -131,7 +131,7 @@ equalsButton.addEventListener('click',() =>{
     calculator.compute()
     calculator.updateDisplay()
     calculator.clear()
-    console.log(calculator.currentOperandText.innerText,calculator)
+    
     // console.log(calculator.previousOperandText.innerText)
 })
 
