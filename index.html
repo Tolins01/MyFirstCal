@@ -13,7 +13,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class="body">
     <div class="container">
       <div class="top-container">
         <div class="header">
@@ -22,7 +22,7 @@
               THEME
               <div class="option">
                <label for="range" class="label"><span>1</span>2<span>3<span></label>
-               <input class="range" type="range" name="theme" id="range" min="1" max="3" value="0">
+               <input data-range class="range" type="range" name="theme" id="range" min="1" max="3" value="0">
               </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
             <button data-number class="but">7</button>
             <button data-number class="but">8</button>
             <button data-number class="but">9</button>
-            <button data-delete class="bot del">Del</button>
+            <button data-delete class="bot del edit">Del</button>
           </div>
           <div class="val">
             <button data-number class="but">4</button>
@@ -63,7 +63,7 @@
             <button data-operation class="bot">*</button>
           </div>
           <div class="val res">
-            <button class="reset bot" data-all-clear type="reset">Reset</button>
+            <button class="reset bot edit" data-all-clear type="reset">Reset</button>
             <button class="submit bot" data-equals type="submit">=</button>
           </div>
         </div>

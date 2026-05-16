@@ -5,6 +5,62 @@ const equalsButton = document.querySelector("[data-equals]")
 const allClearButton = document.querySelector("[data-all-clear]")
 const operationButton = document.querySelectorAll("[data-operation]")
 const numberButtons = document.querySelectorAll("[data-number]")
+const themeButton = document.querySelector("#range")
+const body = document.querySelector(".body")
+const display =  document.querySelector(".display")
+const keypads = document.querySelector(".keypad")
+
+themeButton.addEventListener("input", ()=>{
+   
+  function adjustClasses (className,operate,otherBut){
+
+    const editButtons = document.querySelectorAll(".edit") 
+    const topContainer = document.querySelector(".top-container")
+    equalsButton.classList[operate](otherBut.equal)
+    topContainer.classList[operate](otherBut.topContainer)
+
+    editButtons.forEach(but => {
+      but.classList[operate](otherBut.editclass)
+    })
+    numberButtons.forEach(but=>{
+        but.classList[operate](className)
+      })
+    operationButton.forEach(but=>{
+       but.classList[operate](className)
+      })
+  }
+
+  function adjustMainTheme(operate, bodyClass, displayClass, keypadClass){
+
+  body.classList[operate](bodyClass)
+  display.classList[operate](displayClass)
+  keypads.classList[operate](keypadClass)
+
+}
+  switch(themeButton.value){
+    case "2":
+      body.classList.remove("theme-three-body");
+      adjustMainTheme( "add", "theme-two-body", "display-two","key-two")
+      adjustClasses("button-two-theme","add", {equal:"equal-but-two", editclass:"theme-edit-two", topContainer:"two-top-container"})
+      adjustClasses("button-three-theme","remove",{equal:"equal-but-three", editclass:"theme-edit-three", topContainer:"three-top-container"})
+      break;
+
+    case "3":
+      body.classList.add("theme-three-body");
+      adjustMainTheme("remove","theme-two-body","display-two","key-two")
+      adjustClasses("button-three-theme","add",{equal:"equal-but-three", editclass:"theme-edit-three", topContainer:"three-top-container"})
+      break;
+
+    default:
+   
+    body.classList.remove("theme-three-body");
+    adjustMainTheme( "remove", "theme-two-body", "display-two","key-two")
+    adjustClasses("button-two-theme","remove",{equal:"equal-but-two", editclass:"theme-edit-two", topContainer:"two-top-container"});
+    adjustClasses("button-three-theme","remove",{equal:"equal-but-three", editclass:"theme-edit-three", topContainer:"three-top-container"})
+    return
+   }
+})
+     
 
 let answer;
 console.log('welcome')

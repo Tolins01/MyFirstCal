@@ -5,15 +5,14 @@
     font-weight: 700 ;
 }
 
-body{
+.body{
     display: flex;
     background-color: hsl(222, 26%, 31%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ffffff;
 }
-
-
 
 .container{
     display: flex;
@@ -30,13 +29,13 @@ body{
     width: 100%;
     flex-direction: column;
     justify-content: center;
+    color: #fff;
 }
 
 .header{
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    color: hsl(0, 0%, 100%);
     margin: 1em 0 0 0;
     padding:0 0em 0 2em;
     text-align: center;
@@ -45,11 +44,6 @@ body{
     font-size: 10px;
 }
 
-/* .display{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-} */
 
 .option{
     display: flex;
@@ -57,15 +51,6 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-
-.range{
- position: relative;
- width: 3em;
- height: 1.5em;
- outline: none;
- cursor: pointer;
 }
 
 
@@ -79,18 +64,11 @@ body{
 }
 
 
-.range::-webkit-slider-runnable-track{
-    border-radius: 1em;
-    width: 4em;
-    background-color:  hsl(221, 35%, 25%);
-}
-
-
-
 
 .calc{
     display: flex;
     justify-self: flex-start;
+    font-size: 1.2rem;
     width: 50%;
 }
 
@@ -115,7 +93,6 @@ body{
     overflow-wrap: break-word;
     word-break: break-all;
     border-radius: 5px;
-    color:#fff;
     background-color: hsl(268, 71%, 12%)
 }
 
@@ -159,6 +136,7 @@ body{
     padding: 10px;
 } 
 
+
 .but,.bot,.del{
     display: flex;
     width: 3em;
@@ -197,4 +175,161 @@ body{
 .submit{
     color: hsl(0, 0%, 100%);
     background-color:hsl(6, 63%, 50%) ;
+}
+
+
+.range{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 1.5em;
+  position: relative;
+  align-items: center;
+  width: 3em;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Track */
+.range::-webkit-slider-runnable-track{
+  height: 1.2em;
+  border-radius: 1.2em;
+  background-color: hsl(0, 0%, 44%);
+}
+
+/* Thumb / Ball */
+.range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: red;
+  margin-top:0.2em;
+  cursor: pointer;
+}
+
+.theme-two-body .range::-webkit-slider-thumb{
+  background-color: #ca5502;
+}
+
+
+.theme-three-body .range::-webkit-slider-thumb{
+  background-color: cyan;
+}
+
+
+.equal-but-two{
+    background-color: #ca5502;
+    color:white;
+    border: none;
+    box-shadow: 0px 1px 0px #cdc6c6;
+}
+
+
+.theme-two-body{
+    background-color:#e5e4e1;
+    color: #ca5502;
+}
+
+.button-two-theme{
+    color: #000;
+    border: none;
+    box-shadow: 0px 1px 0px #cdc6c6;
+}
+
+.key-two,
+.display-two{
+    background-color: #d1cccc;
+}
+
+.two-top-container{
+    color:#35352c;
+}
+
+.theme-edit-two{
+    color: #fff;
+    background-color: #377f86;
+    border: none;
+    box-shadow: 0px 1px 0px #cdc6c6;
+}
+
+.three-top-container{
+    color: yellow;
+}
+
+.equal-but-three{
+    background-color: #6cf9f2;
+    color:black;
+    border: none;
+    box-shadow: 0px 2px 0px #00decf;
+}
+
+
+.theme-three-body{
+    background-color: #160628;
+    color:cyan;
+}
+
+
+
+.theme-edit-three{
+    color: #fff;
+    background-color: #56077c;
+    border: none;
+    box-shadow: 0px 1px 0px #bc15f4;
+}
+
+.button-three-theme{
+    background-color: #341c4f;
+    color:#ffe53d;
+    border: none;
+    box-shadow: 0px 1px 0px #871c9c;
+}
+
+.but,
+.bot,
+.submit,
+.reset,
+.del{
+    transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.but:hover,
+.bot:hover{
+    filter: brightness(115%);
+    transform: translateY(-1px);
+}
+
+.submit:hover{
+    filter: brightness(120%);
+    transform: translateY(-1px);
+}
+
+.del:hover,
+.reset:hover{
+    filter: brightness(120%);
+    transform: translateY(-1px);
+}
+
+
+.button-three-theme:hover{
+    box-shadow:
+    0px 2px 0px #871c9c,
+    0 0 2px #bc15f4;
+}
+
+.theme-edit-three:hover{
+    box-shadow:
+    0px 2px 0px #bc15f4,
+    0 0 2px #bc15f4;
+}
+
+.equal-but-three:hover{
+    box-shadow:
+    0px 2px 0px #00decf,
+    0 0 2px #6cf9f2;
 }
